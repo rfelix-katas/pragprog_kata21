@@ -8,4 +8,11 @@ class ListTests < Test::Unit::TestCase
     list = List.new
     assert_equal(0, list.size)    
   end
+
+  def test_add_method
+    list = List.new
+    #list.add("fred")
+    assert_equal("fred", list.add("fred"))
+    assert_equal(1, list.size)
+  end
 end
