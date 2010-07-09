@@ -1,3 +1,0 @@
-class Kata
-  
-end
