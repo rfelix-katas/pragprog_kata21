@@ -1,3 +1,11 @@
+class Node
+  attr_accessor :value
+  
+  def initialize(str_value)
+    @value = str_value
+  end
+end
+
 class List
   attr_accessor :size
 
@@ -6,13 +14,15 @@ class List
     @nodes = []
   end
   
-  def add(node)
-    @nodes << node
+  def add(str)
+    @nodes << Node.new(str)
     @size += 1
-    node
+    str
   end
 
-  def find(node)
-    return node if @nodes.include?(node)
+  def find(str)
+    @nodes.each do |node|
+      return node if node.value == str
+    end
   end
 end

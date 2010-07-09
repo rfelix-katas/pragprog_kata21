@@ -6,7 +6,7 @@ require 'list'
 class ListTests < Test::Unit::TestCase
   def test_class_creation
     list = List.new
-    assert_equal(0, list.size)    
+    assert_equal(0, list.size)  
   end
 
   def test_add_method
@@ -20,5 +20,14 @@ class ListTests < Test::Unit::TestCase
     list = List.new
     list.add("fred")
     assert_equal("fred", list.find("fred").value())
+  end
+  
+  def test_delete_method
+    list = List.new
+    list.add("fred")
+    assert_equal("fred", list.find("fred").value())
+    list.delete(list.find("fred"))
+    assert_equal(0, list.size)
+    assert_nil(list.find("fred"))
   end
 end
