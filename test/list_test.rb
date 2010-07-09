@@ -15,4 +15,10 @@ class ListTests < Test::Unit::TestCase
     assert_equal("fred", list.add("fred"))
     assert_equal(1, list.size)
   end
+  
+  def test_find_method
+    list = List.new
+    list.add("fred")
+    assert_equal("fred", list.find("fred").value())
+  end
 end
