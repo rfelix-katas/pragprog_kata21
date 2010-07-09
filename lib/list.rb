@@ -11,4 +11,8 @@ class List
     @size += 1
     node
   end
+
+  def find(node)
+    return node if @nodes.include?(node)
+  end
 end
